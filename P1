@@ -1,0 +1,66 @@
+const getUserChoice = (userInput) => {
+  userInput = userInput.toUpperCase();
+  if (
+    userInput === "STONE" ||
+    userInput === "PAPER" ||
+    userInput === "SCISSORS" ||
+    userInput === "BOMB"
+  ) {
+    return userInput;
+  } else {
+    return "Error";
+  }
+};
+const getComputerChoice = () => {
+  const num1 = Math.floor(Math.random() * 3);
+  switch (num1) {
+    case 0:
+      return "STONE";
+      break;
+    case 1:
+      return "PAPER";
+      break;
+    case 2:
+      return "SCISSORS";
+      break;
+    default:
+      return "Invalid Move";
+  }
+};
+const determineWinner = (userChoice, computerChoice) => {
+  if (userChoice === computerChoice) {
+    return "Game Tied";
+  }
+  if (userChoice === "STONE") {
+    if (computerChoice === "PAPER") {
+      return "Computer Won";
+    } else {
+      return "Rakesh Won";
+    }
+  }
+  if (userChoice === "PAPER") {
+    if (computerChoice === "SCISSORS") {
+      return "Computer Won";
+    } else {
+      return "Rakesh Won";
+    }
+  }
+  if (userChoice === "SCISSORS") {
+    if (computerChoice === "STONE") {
+      return "Computer Won";
+    } else {
+      return "Rakesh Won";
+    }
+  }
+  if (userChoice === "BOMB") {
+    return "Damm you cheated";
+  }
+};
+const playGame = () => {
+  const m = getUserChoice("BOMB");
+  const b = getComputerChoice();
+  console.log(m);
+  console.log(b);
+  console.log(determineWinner(m, b));
+};
+playGame();
