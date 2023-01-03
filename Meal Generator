@@ -46,7 +46,7 @@ const menu = {
     const main = this.getRandomDishFromCourse("mains");
     const dessert = this.getRandomDishFromCourse("desserts");
     const totalPrice = appetizer.price + main.price + dessert.price;
-    return `your meal name ${appetizer.name } + ${main.name} + ${dessert.name}: total price ${totalPrice}`
+    return `Your Meal Name: ${appetizer.name } + ${main.name} + ${dessert.name}:\nTotal price ${totalPrice}`
   }
   }
 menu.addDishToCourse('mains','musturd-stuff',23);
