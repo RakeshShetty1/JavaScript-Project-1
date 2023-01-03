@@ -57,7 +57,7 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 };
 const playGame = () => {
-  const m = getUserChoice("BOMB");
+  const m = getUserChoice("STONE");
   const b = getComputerChoice();
   console.log(m);
   console.log(b);
